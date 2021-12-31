@@ -42,11 +42,7 @@ if (req.url == "/growtopia/server_data.php" || req.url == "C:/xampp/htdocs/growt
 	    res.writeHead(200, "Anti-Flood-HTTP");
             serverdataread();
             res.end();
-        	} else {
-	    blockthem(); // Iam not sure about block they connection here.
-	    // but if you get a error while logged in to game(your-server)
-	   // just delete it.
-        }
+        	}
     } else {
         blockthem(); //Block the connections lol.
     }
