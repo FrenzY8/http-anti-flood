@@ -5,7 +5,7 @@ const os = require('os')
 var blacklist = new Map();
 console.log(blacklist)
 const fs = require('fs')
-console.log(">> Made by .FrenzySG.#2331 <<")
+console.log(">> Made by ( .FrenzySG.#2331 ) <<")
 const {
     exec
 } = require('child_process');
@@ -18,7 +18,6 @@ var ip = (req.headers['x-forwarded-for'] || '').split(',').pop().trim() ||
         req.connection.socket.remoteAddress
 //Create auto-block function:
 function blockthem () {
-// Exec commands get from github account named: galvinlol
 exec(`netsh advfirewall firewall add rule name="BLACKLIST" dir=in action=block remoteip="${ipAddress}"`, (error, stdout, stderr, spawn) => {
 console.log(`[${ipAddress}] Connection have been Blocked`)
  });
@@ -34,20 +33,28 @@ function serverdataread () {
 }
 if (req.url == "/growtopia/server_data.php" || req.url == "C:/xampp/htdocs/growtopia/server_data.php") {
         if (req.method = "POST") {
-	    res.writeHead(200, "Anti-Flood-HTTP");
+            res.writeHead(200, "HTTP-ANTI-FLOODER")
             serverdataread();
             res.end();
         } else {
         	if (req.method = "GET") {
-	    res.writeHead(200, "Anti-Flood-HTTP");
+            res.writeHead(200, "HTTP-ANTI-FLOODER")
             serverdataread();
             res.end();
-        	}
+        	} else {
+            // Not post, Not get,
+            blockthem(); // not sure abt this.
+            // if you get error while logged in into your servers
+            // just delete this or make //blockthem();
+            // i hope you understand.
+            }
+        }
     } else {
+        // Block any method. ,"GET","POST",
         blockthem(); //Block the connections lol.
     }
 })
 
 client.listen(80)
-console.log("[-] Listening to Port 80")
-console.log("[-] Auto-Block method is ready.")
+console.log("[] Listening to Port 80")
+console.log("[] Auto-Block method is ready.")
