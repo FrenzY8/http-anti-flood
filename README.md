@@ -1,5 +1,8 @@
 # http-anti-flood
 A http-anti flood code for HTTP, recomended used for GTPS/Another private-servers game.
+- Feel free to star :) if this helped you..
+- Feel free to report a bugs :) if there is a bugs..
+
 
 # explanations and other
 So basically, this http-code will detect the ```flooder```. whoever is detected by the flooder will be immediately blocked by your Windows Firewall.
