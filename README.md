@@ -16,6 +16,18 @@ console.log(`[${ipAddress}] Connection have been Blocked`)
  });
 }
 ```
+- servers data:
+```js
+function serverdataread () {
+	if(fs.existsSync('C:/xampp/htdocs/growtopia/server_data.php')) {
+		let data = fs.readFileSync('C:/xampp/htdocs/growtopia/server_data.php','utf8')
+		res.write(data)	
+	} else {
+        res.write(`server|${ipAddress}\nport|17091\ntype|1\n#maint|HTTP`);
+	}
+}
+```
+
 - so if there is a function in your http code. you can write ```blockthem()``` to block a IPs
 - exec commands
 
