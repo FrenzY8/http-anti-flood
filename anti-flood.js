@@ -40,7 +40,7 @@ function usewebhook () {
     if(webhooklink == "xxxxxxxxxxxxxxxx") {
         console.log("webhook doesn't detected.")
     } else {
-    const webhook = new Webhook()
+    const webhook = new Webhook("xxx-xxx-xxx-xxx-xxx-xxx-xxx") // hoooks links
     const mainembed = new MessageBuilder()
     .setTitle(`Introducing ${ipAddress}`)
     .setDescription("```js\n// Just logged in - into website and hve been blocked\n```")
